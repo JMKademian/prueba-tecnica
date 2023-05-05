@@ -1,12 +1,12 @@
-#Aplicación Django-React
+# Aplicación Django-React
 Esta es una aplicación web que utiliza Django como backend y React como frontend. La aplicación se puede compilar y desplegar utilizando Docker y Docker Compose.
 
-##Requisitos
+## Requisitos
 Antes de comenzar, asegúrese de tener instalados los siguientes programas en su máquina:
 Docker
 Docker Compose
 
-##Instrucciones para PC local
+## Instrucciones para PC local
 1. Clone este repositorio en su máquina local:
 ```
 git clone https://github.com/JMKademian/prueba-2.git
@@ -35,7 +35,7 @@ docker-compose up
 ```
 6. Acceda a la aplicación de Django en su navegador web en http://localhost:8000 y a la aplicación de React en http://localhost:80.
 
-##Instrucciones para AWS
+## Instrucciones para AWS
 1. Cree una instancia de EC2 en AWS y asegúrese de tener acceso a ella.
 
 2. Clone este repositorio en su máquina local:
