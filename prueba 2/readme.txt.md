@@ -1,7 +1,9 @@
 #Aplicación Django-React
+
 Esta es una aplicación web que utiliza Django como backend y React como frontend. La aplicación se puede compilar y desplegar utilizando Docker y Docker Compose.
 
 ##Requisitos
+
 Antes de comenzar, asegúrese de tener instalados los siguientes programas en su máquina:
 
 Docker
