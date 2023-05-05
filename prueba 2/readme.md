@@ -3,8 +3,9 @@ Esta es una aplicación web que utiliza Django como backend y React como fronten
 
 ## Requisitos
 Antes de comenzar, asegúrese de tener instalados los siguientes programas en su máquina:
-Docker
-Docker Compose
+
+-Docker
+-Docker Compose
 
 ## Instrucciones para PC local
 1. Clone este repositorio en su máquina local:
