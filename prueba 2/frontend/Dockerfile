@@ -1,10 +1,13 @@
-FROM node as build
-WORKDIR /app
-COPY frontend/package*.json ./
+FROM node
+
+WORKDIR /app/frontend
+
+COPY . .
+
 RUN npm install
-COPY frontend/ ./
+
 RUN npm run build
-FROM nginx
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
