@@ -1,38 +1,43 @@
-version: '3.8'
+version: '3'
 
 services:
-  backend:
-    build: ./backend
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
     environment:
-      DB_ENGINE: \${DB_ENGINE}
-      DB_NAME: \${DB_NAME}
-      DB_USER: \${DB_USER}
-      DB_PASS: \${DB_PASS}
-      DB_HOST: \${DB_HOST}
-      DB_PORT: \${DB_PORT}
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+
+  django:
+    build: ./backend
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - ./backend:/app/backend
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend:/app
     depends_on:
       - db
+    environment:
+      DB_ENGINE: django.db.backends.postgresql
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASS: mysecretpassword
+      DB_HOST: db
+      DB_PORT: 5432
+      SECRET_KEY: joseka
 
   frontend:
     build: ./frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-
-  db:
-    image: postgres
-    environment:
-      POSTGRES_DB: \${DB_NAME}
-      POSTGRES_USER: \${DB_USER}
-      POSTGRES_PASSWORD: \${DB_PASS}
+    command: ["npm", "start"]
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./frontend:/app/frontend
+      - node-modules:/app/frontend/node_modules
+    ports:
+      - "3000:3000"
 
 volumes:
-  postgres_data:
+  node-modules:
+
 
