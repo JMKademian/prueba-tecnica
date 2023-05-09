@@ -4,8 +4,8 @@ Esta es una aplicación web que utiliza Django como backend y React como fronten
 ## Requisitos
 Antes de comenzar, asegúrese de tener instalados los siguientes programas en su máquina:
 
--Docker
--Docker Compose
+- Docker
+- Docker Compose
 
 ## Instrucciones para PC local
 1. Clone este repositorio en su máquina local:
@@ -14,7 +14,7 @@ git clone https://github.com/JMKademian/prueba-2.git
 ```
 2. Navegue hasta el directorio raíz del proyecto:
 ```
-cd prueba 2
+cd 'prueba 2'
 ```
 3. Cree un archivo .env en el directorio raíz del proyecto y defina las variables de entorno necesarias para la aplicación. 
 Aquí hay un ejemplo de archivo .env:
@@ -25,7 +25,7 @@ DB_USER=postgres
 DB_PASS=mysecretpassword
 DB_HOST=db
 DB_PORT=5432
-SECRET_KEY = joseka
+SECRET_KEY=joseka
 ```
 4. Construya las imágenes de Docker para la aplicación de Django y la aplicación de React:
 ```
