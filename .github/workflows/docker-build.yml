@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'prueba-3/**'
+      - 'prueba-3/index.html'
 
 jobs:
   build-and-deploy:
