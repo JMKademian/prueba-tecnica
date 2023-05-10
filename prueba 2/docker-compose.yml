@@ -1,5 +1,7 @@
+#VERSION DOCKER COMPOSE
 version: '3'
-
+#SERVICIOS
+#DEFINO LA BASE DE DATOS A UTILIZAR Y EL PUERTO A EXPONER 
 services:
   db:
     image: postgres
@@ -9,7 +11,7 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
-
+#DEFINO EL SERVICIO DJANGO PARA EL BACKEND QUE DEPENDE DE LA BASE DE DATOS
   django:
     build: ./backend
     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -27,7 +29,7 @@ services:
       DB_HOST: db
       DB_PORT: 5432
       SECRET_KEY: joseka
-
+#SERVICIO FRONTEND QUE DEPENDE 
   frontend:
     build: ./frontend
     command: ["npm", "start"]
