@@ -1,4 +1,4 @@
-#IMAGEN OFICIAL NGING 
+#IMAGEN OFICIAL NGINX
 FROM nginx
 #COPIAR EL ARCHIVO INDEX.HTML AL DIRECTORIO /usr/share/nginx/html
 COPY index.html /usr/share/nginx/html/index.html
