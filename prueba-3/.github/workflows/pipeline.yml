@@ -2,11 +2,10 @@ name: Deploy Nginx
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'prueba-3/index.html'
-    
+    branches: [ main ]
+    paths: 
+    - prueba-3/index.html 
+     
 
 jobs:
   docker_build:
