@@ -3,8 +3,8 @@ name: Deploy Nginx
 on:
   push:
     branches: [ main ]
-    paths: 
-    - prueba-3/index.html
+    #paths: 
+    #- prueba-3/index.html
     
    
      
@@ -34,4 +34,4 @@ jobs:
         context: ./prueba-3
         file: ./Dockerfile
         push: true
-        tags: nginx-image:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/nginx-image:latest
