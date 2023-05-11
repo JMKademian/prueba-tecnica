@@ -3,8 +3,8 @@ name: Deploy Nginx
 on:
   push:
     branches: [ main ]
-    #paths: 
-    #- prueba-3/index.html
+    paths: 
+    - prueba-3
     
    
      
