@@ -3,10 +3,9 @@ name: Deploy Nginx
 on:
   push:
     branches: [ main ]
-    
     paths: 
-    - 'prueba-3/index.html'
-    - 'prueba-3/Dockerfile'
+    - prueba-3/index.html
+    - prueba-3/Dockerfile
    
      
 
@@ -33,5 +32,6 @@ jobs:
         context: .
         dockerfile: prueba-tecnica/prueba-3/Dockerfile
         push: true
+        repository: josekademian/img-nginx-prueba
         tags: nginx-image:latest
         
