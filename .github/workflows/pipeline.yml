@@ -8,7 +8,6 @@ on:
     - prueba-3/Dockerfile
    
      
-
 jobs:
   docker_build:
     runs-on: ubuntu-latest
@@ -20,20 +19,13 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
+    - name: Login to DockerHub
+      if: github.ref == 'refs/heads/master'
+      uses: docker/[email protected] 
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: dock im
-      run: >    
-            docker build . -t nginx-image 
-            -f prueba-3/Dockerfile
-    - name: Build exam
-      run: >
-          docker run -v 
-          $GITHUB_WORKSPACE:/srv 
-          -w/srv foobar make
+    
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
@@ -41,3 +33,4 @@ jobs:
         dockerfile: prueba-tecnica/prueba-3/Dockerfile
         push: true
         tags: nginx-image:latest
+
