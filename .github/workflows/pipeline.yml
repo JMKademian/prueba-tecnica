@@ -28,7 +28,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: prueba-3/Dockerfile
+        context: prueba-tecnica/prueba-3/Dockerfile
         file: Dockerfile
         push: true
         tags: nginx-image:latest
