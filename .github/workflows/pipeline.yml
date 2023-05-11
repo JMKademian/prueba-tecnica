@@ -33,4 +33,5 @@ jobs:
         context: .
         dockerfile: prueba-tecnica/prueba-3/Dockerfile
         push: true
-        tags: josekademian/nginx-image:latest
+        tags: my-image 
+        run: docker build -t my-image .
