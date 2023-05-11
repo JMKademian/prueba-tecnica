@@ -5,8 +5,8 @@ on:
     branches: [ main ]
     
     paths: 
-    - 'prueba-3/index.html'
-    - 'prueba-3/Dockerfile'
+    - 'prueba-tecnica/prueba-3/index.html'
+    - 'prueba-tecnica/prueba-3/Dockerfile'
    
      
 
