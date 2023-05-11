@@ -6,6 +6,7 @@ on:
     
     paths: 
     - 'prueba-3/index.html'
+    - 'prueba-3/Dockerfile'
    
      
 
@@ -31,4 +32,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: josekademian/img-nginx-prueba:lastest
+        tags: nginx-image:latest
