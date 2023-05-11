@@ -1,34 +1,28 @@
-name: Deploy Nginx 
-
+name: Deploy Nginx
 on:
   push:
-    branches: [ main ]
-    paths: 
-    - prueba-3/index.html
-    
-   
-     
+    branches: [main]
 jobs:
-  docker_build:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        dockerfile: prueba-tecnica/prueba-3/Dockerfile
-        push: true
-        tags: nginx-image:latest
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: josekademian/img-nginx-prueba:latest
+      - name: Deploy to Docker Compose
+        uses: docker/compose-action@v1.0.0-rc1
+        with:
+          compose-file: docker-compose.yml
+          project-name: nginx
+          service: web
+          environment: |
+            NGINX_PORT=80
+          secrets: |
+            DOCKERHUB_USERNAME= ${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERHUB_PASSWORD= ${{ secrets.DOCKERHUB_TOKEN }}
