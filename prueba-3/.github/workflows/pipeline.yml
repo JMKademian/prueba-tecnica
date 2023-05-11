@@ -2,7 +2,7 @@ name: Deploy Nginx
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
    
      
 
