@@ -29,6 +29,6 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        dockerfile: prueba-tecnica/prueba-3/Dockerfile
+        file: prueba-tecnica/prueba-3/Dockerfile
         push: true
         tags: nginx-image:latest
