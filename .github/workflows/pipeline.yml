@@ -31,6 +31,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        dockerfile: prueba-3/Dockerfile
+        dockerfile: ./prueba-3/Dockerfile
         push: true
         tags: nginx-image:latest
