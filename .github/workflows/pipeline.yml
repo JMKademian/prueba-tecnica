@@ -26,7 +26,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build Docker image
-      run: docker build -f Dockerfile.base -t nginx-image:latest ./prueba-3
+      run: docker build -f Dockerfile -t nginx-image:latest ./prueba-3
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
