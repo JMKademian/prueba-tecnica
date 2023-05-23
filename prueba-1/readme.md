@@ -13,7 +13,7 @@ Este proyecto presenta una arquitectura escalable para una aplicación web que g
 
 4. Cloudfront, ya que agiliza la distribución de contenido al dirigir cada solicitud de usuario mediante la red troncal de AWS a la ubicación de borde que mejor ofrezca el contenido, dirigido hacia el servicio bucket S3 que contiene el frontend.
 
-5. Utilización de una base de datos relacional en Amazon Relational Database Service (RDS) con alta disponibilidad para comunicarse con el backend y una base de datos no relacional en Amazon DynamoDB. Se configura para que se comunique con el backend. La base de datos puede estar basada en documentos o en clave-valor, y puede utilizar AWS DynamoDB Streams para capturar los cambios en tiempo real.
+5. Utilización de una base de datos relacional en Amazon Relational Database Service (RDS) con alta disponibilidad para comunicarse con el backend y una base de datos no relacional en Amazon DynamoDB. Se configura para que se comunique con el backend. La base de datos puede estar basada en documentos o en clave-valor.
 
 6. Amazon API Gateway actúa como una capa intermedia que se comunica con las funciones Lambda del backend y que, a su vez, se comunican con las bases de datos. En otras palabras, Amazon API Gateway es el punto de entrada de las solicitudes de los usuarios hacia el backend de la aplicación web.
 
