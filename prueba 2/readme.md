@@ -35,7 +35,7 @@ docker-compose build
 ```
 docker-compose up
 ```
-6. Acceda a la aplicación de Django en su navegador web en http://localhost:8000 y a la aplicación de React en http://localhost:80.
+6. Acceda a la aplicación de Django en su navegador web en http://localhost:8000 y a la aplicación de React en http://localhost:3000.
 
 ## Instrucciones para AWS
 

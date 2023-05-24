@@ -7,4 +7,4 @@
   -Evento que desencadena el workflow, en este caso, cada cambio realizado sobre el index.html.
   -Jobs que se deben ejecutar en el workflow.
   -Steps que se deben ejecutar en cada job.
-4. Para que el workflow funcione correctamente, se deben definir los secretos necesarios en los ajustes del repositorio de GitHub. En este caso, se deben definir los secretos "DOCKER_USERNAME" y "DOCKER_PASSWORD" con las credenciales para autenticarse en la plataforma de Docker.
+4. Para que el workflow funcione correctamente, se deben definir los secretos necesarios en los ajustes del repositorio de GitHub. En este caso, se deben definir los secretos "DOCKER_USERNAME" y "DOCKER_PASSWORD" con las credenciales para autenticarse en la plataforma de Docker Hub que estamos utilizando para correr nuestra imagen.

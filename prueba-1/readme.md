@@ -9,11 +9,11 @@ Este proyecto presenta una arquitectura escalable para una aplicación web que g
 
 2. Una instancia de Elastic Compute Cloud (EC2) para el frontend y se configura para que se comunique con el backend. Se crea una instancia para cada AZ y se agrega AWS Auto Scaling, lo que permite crear planes de escalado que automatizan la manera en la que diferentes recursos responden ante los cambios que se producen en la demanda con el objetivo de controlar la carga de la aplicación.
 
-3. Application Load Balancer (ALB) para distribuir la carga entre las instancias de EC2 y habilitar el escalado automático con grupos de escalado automático de AWS.
+3. Application Load Balancer (ALB) para distribuir la carga entre las instancias de EC2 y habilitar el escalado automático con grupos de AWS.
 
 4. Cloudfront, ya que agiliza la distribución de contenido al dirigir cada solicitud de usuario mediante la red troncal de AWS a la ubicación de borde que mejor ofrezca el contenido, dirigido hacia el servicio bucket S3 que contiene el frontend.
 
-5. Utilización de una base de datos relacional en Amazon Relational Database Service (RDS) con alta disponibilidad para comunicarse con el backend y una base de datos no relacional en Amazon DynamoDB. Se configura para que se comunique con el backend. La base de datos puede estar basada en documentos o en clave-valor, y puede utilizar AWS DynamoDB Streams para capturar los cambios en tiempo real.
+5. Utilización de una base de datos relacional en Amazon Relational Database Service (RDS) con alta disponibilidad para comunicarse con el backend y una base de datos no relacional en Amazon DynamoDB. Se configura para que se comunique con el backend. La base de datos puede estar basada en documentos o en clave-valor.
 
 6. Amazon API Gateway actúa como una capa intermedia que se comunica con las funciones Lambda del backend y que, a su vez, se comunican con las bases de datos. En otras palabras, Amazon API Gateway es el punto de entrada de las solicitudes de los usuarios hacia el backend de la aplicación web.
 
