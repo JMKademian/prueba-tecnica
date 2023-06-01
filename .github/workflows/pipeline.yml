@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths: 
-    - prueba-3/index.html
+    - prueba-3
     
    
      
@@ -29,7 +29,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
-        context: /prueba-tecnica/prueba-3
-        file: /prueba-tecnica/prueba-3/Dockerfile
+        context: ./prueba-tecnica/prueba-3
+        file: ./prueba-tecnica/prueba-3/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/nginx-image:latest
